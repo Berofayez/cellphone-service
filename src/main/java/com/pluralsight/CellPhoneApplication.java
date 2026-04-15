@@ -1,17 +1,41 @@
 package com.pluralsight;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+import java.util.Scanner;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
-        }
+public class CellPhoneApplication {
+    static void main() {
+        Scanner scanner = new Scanner(System.in);
+
+        CellPhone cellPhone = new CellPhone();
+
+        System.out.print("What is the serial number? ");
+        int serialNumber = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.print("What model is the phone? ");
+        String model = scanner.nextLine();
+
+        System.out.print("Who is the carrier? ");
+        String carrier = scanner.nextLine();
+
+        System.out.print("What is the phone number? ");
+        String phoneNumber = scanner.nextLine();
+
+        System.out.print("Who is the owner of the phone? ");
+        String owner = scanner.nextLine();
+
+        cellPhone.setSerialNumber(serialNumber);
+        cellPhone.setPhoneNumber(phoneNumber);
+        cellPhone.setCarrier(carrier);
+        cellPhone.setModel(model);
+        cellPhone.setOwner(owner);
+
+        System.out.println("The phone serial number is: " + cellPhone.getSerialNumber());
+        System.out.println("The phone dual number is: " + cellPhone.getPhoneNumber());
+        System.out.println("The phone carrier is: " + cellPhone.getCarrier());
+        System.out.println("The phone model is: " + cellPhone.getModel());
+        System.out.println("The phone owner is: " + cellPhone.getOwner());
+
+
     }
 }
